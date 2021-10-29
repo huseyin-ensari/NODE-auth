@@ -1,0 +1,37 @@
+{
+  "name": "node-auth-process",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node.js",
+    "passport.js",
+    "auth"
+  ],
+  "author": "Hüseyin Ensari",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "nodemailer": "^6.7.0",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  }
+}
