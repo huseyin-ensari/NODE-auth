@@ -1,0 +1,12 @@
+//- validation errors
+each error in validation_errors
+    .alert.alert-warning.alert-dismissible.fade.show(role="alert")
+        strong= error.msg
+//- success messages
+each success in success_messages
+    .alert.alert-success.alert-dismissible.fade.show(role="alert")
+        strong= success.msg
+//- session error
+each session_msg in session_error
+    .alert.alert-danger.alert-dismissible.fade.show(role="alert")
+        strong= session_msg
