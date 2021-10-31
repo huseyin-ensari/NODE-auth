@@ -4,9 +4,9 @@
 ![pug.js](https://img.shields.io/badge/Pug-E3C29B?style=for-the-badge&logo=pug&logoColor=black)
 ![passport.js](https://img.shields.io/badge/passport.js-black?style=for-the-badge&logo=passport)
 
-Used design template [link](https://startbootstrap.com/theme/sb-admin-2)
+Used design template [link](https://startbootstrap.com/theme/sb-admin-2).
 
-if you want to try the working version of this repository [click](https://node-auth-process.herokuapp.com/register)
+if you want to try the working version of this repository [click](https://node-auth-process.herokuapp.com/register).
 - [x] register
 - [x] login
 - [x] forgot password
