@@ -36,7 +36,32 @@ const loginValidation = () => {
   ];
 };
 
+const emailValidation = () => {
+  return [body('email', 'Email is not valid').isEmail().trim().exists()];
+};
+
+const newPasswordValidation = () => {
+  return [
+    body('password', 'Password required')
+      .isLength({ min: 6 })
+      .withMessage('Password was be 6 character')
+      .trim()
+      .exists(),
+    body('repassword')
+      .trim()
+      .exists()
+      .custom((value, { req }) => {
+        if (value != req.body.password) {
+          throw new Error('Passwords must be some');
+        }
+        return true;
+      }),
+  ];
+};
+
 module.exports = {
   newUserValidation,
   loginValidation,
+  emailValidation,
+  newPasswordValidation,
 };
