@@ -23,7 +23,7 @@ DB_URL= < Your db url >
 SESSION_SECRET = < session password >
 APP_URL = < application url >
 JWT_SECRET_KEY = < jwt secret key >
-SMTP_USER = < your gmail adres >
+SMTP_USER = < your gmail address >
 SMTP_PASSWORD = < gmail password or google app password >
 ```
 
