@@ -25,6 +25,18 @@ const newUserValidation = () => {
   ];
 };
 
+const loginValidation = () => {
+  return [
+    body('email', 'Email is not valid').isEmail().trim().exists(),
+    body('password')
+      .isLength({ min: 6 })
+      .withMessage('Password in not valid')
+      .trim()
+      .exists(),
+  ];
+};
+
 module.exports = {
   newUserValidation,
+  loginValidation,
 };

@@ -1,8 +1,10 @@
 const asyncErrorHandler = require('express-async-handler');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
-const User = require('../models/User');
 const { validationResult } = require('express-validator');
+const passport = require('passport');
+const User = require('../models/User');
+require('../config/auth/passportLocal')(passport);
 
 const register = asyncErrorHandler(async (req, res, next) => {
   const { name, lastname, email, password } = req.body;
@@ -37,4 +39,20 @@ const register = asyncErrorHandler(async (req, res, next) => {
   });
 });
 
-module.exports = { register };
+const login = asyncErrorHandler(async (req, res, next) => {
+  const validationErrors = validationResult(req);
+  req.flash('email', req.body.email);
+  if (!validationErrors.isEmpty()) {
+    req.flash('validation_errors', validationErrors.array());
+
+    return res.redirect('/login');
+  }
+
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true,
+  })(req, res, next);
+});
+
+module.exports = { register, login };
