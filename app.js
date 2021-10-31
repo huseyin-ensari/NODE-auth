@@ -37,7 +37,12 @@ app.use((req, res, next) => {
   res.locals.email = req.flash('email');
   res.locals.name = req.flash('name');
   res.locals.lastname = req.flash('lastname');
+
+  next();
 });
+// passport initialize
+app.use(passport.initialize());
+app.use(passport.session());
 // router
 app.use('/', indexRouter);
 
